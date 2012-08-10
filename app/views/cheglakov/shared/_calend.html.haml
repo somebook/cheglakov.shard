@@ -1,0 +1,14 @@
+%a.cal-toggle{ href: "", title: t("front.cheglakov.calendar") }
+  %i.icon.cal
+%nav
+  %div
+    %span.arr.prev
+    - @years.each_key do |year|
+      .year{ class: ("active" if year == @year) }
+        - @years[year].each do |month|
+          %a{ href: "?month=#{month[1]}-#{month[0]}", class: ("active" if params[:month] && params[:month] == "#{month[1]}-#{month[0]}"), title: I18n.l(Time.mktime(2000, month[0].to_s), format: "%B", locale: :ru) }
+            %span
+              = I18n.l Time.mktime(2000, month[0].to_s), format: "%B", locale: :ru
+              %em= month[1] 
+            %b= month[2] unless month[2].zero?
+    %span.arr.next

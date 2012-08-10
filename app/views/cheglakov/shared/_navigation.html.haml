@@ -1,7 +1,5 @@
-%li{ class: section == "events" ? "active" : nil }
-  = link_to t('front.matsuev.event.events'), events_path
-%li{ class: section_page == "media#index" ? "active" : nil }
-  = link_to t('front.matsuev.media.media'), media_index_path
+%li{ class: section.include?("blog") ? "active" : nil }
+  = link_to t('front.cheglakov.blog.my_blog'), root_path
 - unless @static_pages[part].nil?
   - @static_pages[part].each do |sp| 
     %li{ class: (@static_page && (@static_page.id == sp.id)) ? "active" : nil }

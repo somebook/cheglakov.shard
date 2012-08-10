@@ -1,0 +1,23 @@
+%div
+  %h4= t('front.cheglakov.share.share')
+  %ul.clearfix.inline.share
+    %li
+      %a{ href: "http://twitter.com/share?url=http://#{@current_shard_language.domain}&text=#{t('front.cheglakov.description')}", target: "_blank" }
+        %i.icon.tw-m
+        %span.t-tip= t('front.cheglakov.share.tw')
+      %b= @c[:tw]
+    %li
+      %a{ href: "http://vkontakte.ru/share.php?url=http://#{@current_shard_language.domain}", target: "_blank" }
+        %i.icon.vk-m
+        %span.t-tip= t('front.cheglakov.share.vk')
+      %b= @c[:vk]
+    %li
+      %a{ href: "http://www.facebook.com/sharer.php?u=http://#{@current_shard_language.domain}", target: "_blank" }
+        %i.icon.fb-m
+        %span.t-tip= t('front.cheglakov.share.fb')
+      %b= @c[:fb]
+%div
+  %h5= t('front.cheglakov.shares')
+  %p.big-num= @c[:tw] + @c[:vk] + @c[:fb]
+  %p
+  %i.icon.fav

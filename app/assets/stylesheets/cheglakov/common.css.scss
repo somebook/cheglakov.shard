@@ -1,0 +1,1569 @@
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ *
+ * Detailed information about this CSS: h5bp.com/css
+ *
+ * ==|== normalize ==========================================================
+ */
+
+
+/* =============================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+
+/*
+ * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
+ * 2. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
+ */
+
+html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+html, button, input, select, textarea { font-family: sans-serif; color: #222; }
+
+body { margin: 0; font-size: 1em; line-height: 1.4; }
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate
+ * Also: hot pink! (or customize the background color to match your design)
+ */
+
+::-moz-selection { background: #2d92cd; color: #fff; text-shadow: none; }
+::selection { background: #2d92cd; color: #fff; text-shadow: none; }
+
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+
+a { color:#309ddb; text-decoration: none;}
+a:visited { color: #999; text-decoration: none;}
+a:hover { color:#309ddb; text-decoration: none; }
+a:focus { outline: thin dotted; }
+
+/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
+a:hover, a:active { outline: 0; }
+
+
+/* =============================================================================
+   Typography
+   ========================================================================== */
+
+abbr[title] { border-bottom: 1px dotted; }
+
+b, strong { font-weight: bold; }
+
+blockquote { margin: 1em 40px; }
+
+dfn { font-style: italic; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+/* Redeclare monospace font family: h5bp.com/j */
+pre, code, kbd, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; }
+
+/* Improve readability of pre-formatted text in all browsers */
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+
+small { font-size: 85%; }
+
+/* Position subscript and superscript content without affecting line-height: h5bp.com/k */
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+
+ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+dd { margin: 0 0 0 40px; }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+
+/*
+ * 1. Improve image quality when scaled in IE7: h5bp.com/d
+ * 2. Remove the gap between images and borders on image containers: h5bp.com/i/440
+ */
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+/*
+ * Correct overflow not hidden in IE9
+ */
+
+svg:not(:root) { overflow: hidden; }
+
+
+/* =============================================================================
+   Figures
+   ========================================================================== */
+
+figure { margin: 0; }
+
+
+/* =============================================================================
+   Forms
+   ========================================================================== */
+
+form { margin: 0; }
+fieldset { border: 0; margin: 0; padding: 0; }
+
+/* Indicate that 'label' will shift focus to the associated form element */
+label { cursor: pointer; }
+
+/*
+ * 1. Correct color not inheriting in IE6/7/8/9
+ * 2. Correct alignment displayed oddly in IE6/7
+ */
+
+legend { border: 0; *margin-left: -7px; padding: 0; white-space: normal; }
+
+/*
+ * 1. Correct font-size not inheriting in all browsers
+ * 2. Remove margins in FF3/4 S5 Chrome
+ * 3. Define consistent vertical alignment display in all browsers
+ */
+
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+
+/*
+ * 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
+ */
+
+button, input { line-height: normal; }
+
+/*
+ * 1. Display hand cursor for clickable form elements
+ * 2. Allow styling of clickable form elements in iOS
+ * 3. Correct inner spacing displayed oddly in IE7 (doesn't effect IE6)
+ */
+
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; *overflow: visible; }
+
+/*
+ * Re-set default cursor for disabled elements
+ */
+
+button[disabled], input[disabled] { cursor: default; }
+
+/*
+ * Consistent box sizing and appearance
+ */
+
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *width: 13px; *height: 13px; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
+
+/*
+ * Remove inner padding and border in FF3/4: h5bp.com/l
+ */
+
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+/*
+ * 1. Remove default vertical scrollbar in IE6/7/8/9
+ * 2. Allow only vertical resizing
+ */
+
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+
+/* Colors for form validity */
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+
+/* =============================================================================
+   Tables
+   ========================================================================== */
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+
+/* =============================================================================
+   Chrome Frame Prompt
+   ========================================================================== */
+
+.chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
+
+
+/* ==|== primary styles =====================================================
+   Author:
+   ========================================================================== */
+html {
+  background: #eee image-url("cheglakov/page.png") repeat;
+}
+body {
+  font-size: 14px;
+  font-family: 'Times New Roman',sans-serif;
+  color: #434343;
+}
+h1,h2,h3 {
+  font-family: 'Philosopher',sans-serif;
+}
+:-moz-placeholder {
+  color: #999999;
+}
+::-webkit-input-placeholder {
+  color: #999999;
+}
+input,textarea {
+  -moz-transition: border 0.2s linear 0s,box-shadow 0.2s linear 0s;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.075) inset;
+}
+input,textarea,select,.uneditable-input {
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  border-radius: 3px 3px 3px 3px;
+  color: #555555;
+  display: inline-block;
+  font-size: 13px;
+  height: 18px;
+  line-height: 18px;
+  margin-bottom: 9px;
+  padding: 4px;
+  width: 210px;
+}
+input,button,select,textarea {
+  font-family: "Georgia",serif;
+}
+.page {
+  min-height: 1200px;
+  min-width: 960px;
+  max-width: 1600px;
+   margin: 0 auto;
+  color: #434343;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 2;
+  padding: 0 140px;
+  position: relative;
+}
+section {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  &.center-section {
+    min-height: 400px;
+    margin: 0 180px 0 200px;
+    .share { 
+    background: none repeat scroll 0 0 rgba(0,0,0,0.02);
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.1) inset;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1) inset;
+    min-height: 30px;
+    padding: 5px 10px;
+    margin: 30px 0;
+      .item {
+        display:inline-block;
+        vertical-align: top;
+        padding: 3px;
+      }
+  }
+
+  
+    & > div {
+      &.clearfix {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+    }
+    .more-link {
+      margin-left: 10px;
+    }
+  }
+}
+article {
+  padding: 0 0 0 80px;
+  time {
+    float: left;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 12px;
+    em {
+      font-size: 30px;
+      font-family: 'Philosopher',sans-serif;
+      display: block;
+      line-height: 1em;
+      font-style: normal;
+      text-align: center;
+    }
+  }
+  &.post {
+    margin-bottom: 40px;
+    padding: 0 0 40px 80px;
+    position: relative;
+    *zoom: 1;
+    em {  
+     &.l-left {
+      left: 0;
+    margin: 0 15px 0 0;
+    right: 50%;
+     }
+     &.l-right {
+      left: 50%;
+      margin: 0 0 0 15px;
+      right: 0;
+        border-bottom: solid 1px #aaa;
+     }
+    }
+    time {
+      width: 80px;
+      margin: 0 0 0 -80px ;
+    }
+    &:before {
+      content: "";
+      display: table;
+    }
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    h2 {
+      color: #0C1620;
+      font-size: 16px;
+      font-weight: normal;
+      margin: 0 0 20px;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: block;
+      a {
+      color: #0C1620;
+      }
+    }
+    .comments {
+      position: relative;
+      em {
+        &.l-left {
+          left: -100px;
+          width: 80px;
+          margin: 0 0 5px;
+        }
+        &.l-right {
+          display: none;
+        }
+      }
+      .comment-num {
+        margin: 0;
+        font-style: italic;
+         a {
+        color:#434343;
+        }
+
+        b {
+          font-style: normal;
+        }
+      }
+    }
+    &.welcome {
+      margin-bottom: 0!important;
+      padding-bottom: 20px!important;
+      p {
+        font-size: 16px;
+        line-height: 18px;
+        text-align: center;
+        color: #626262;
+      }
+      .l-left { border-bottom: solid 1px #aaa; margin: 0 -15px 0 0}
+    }
+  }
+  &.main-text {
+    padding:20px 0 20px 80px;
+    h2 {
+      margin: 30px 0 -10px;
+      color: #0C1620;
+      display: block;
+      font-size: 16px;
+      font-weight: normal;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+}
+.comments:before,.comments:after {
+  content: "";
+  display: table;
+}
+.comments {
+  *zoom: 1;
+  &:after {
+    clear: both;
+  }
+}
+.nowrap {
+  white-space: nowrap;
+}
+header {
+  height: 287px;
+  position: relative;
+  h1 {
+    background: image-url("cheglakov/logo.jpg") no-repeat scroll center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    a {
+      text-indent: -9999px;
+      position: relative;
+      z-index: 1;
+      display: block;
+      margin: 0 auto;
+      width: 300px;
+      height: 287px;
+    }
+  }
+  nav {
+    left: 20px;
+    right: 20px;
+    position: absolute;
+    top: 120px;
+    z-index: 1;
+    ul {
+      white-space: nowrap;
+          z-index: 3;
+
+      li {
+        display: inline-block;
+        vertical-align: middle;
+        min-height: 61px;
+      }
+      &.menu {
+        a {
+          color: #0c1620;
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: .8em;
+          line-height: 22px;
+          font-family: Helvetica,sans;
+          padding: 30px 10px 0;
+          white-space: nowrap;
+          text-decoration: none;
+          display: block;
+          &:visited {
+            color: #0c1620;
+          }
+          &:hover {
+            text-decoration: none;
+            color: #309ddb;
+          }
+        }
+        li {
+          &.active {
+            background: image-url("cheglakov/active.png") center top no-repeat;
+          }
+        }
+      }
+    }
+  }
+}
+aside {
+  z-index: 2;
+  position: absolute;
+  width: 160px;
+  & > div {
+    box-sizing: padding-box;
+    -moz-box-sizing: padding-box;
+    -webkit-box-sizing: padding-box;
+    text-align: center;
+    margin: 0 0 0 50px;
+    background: #fff;
+    box-shadow: 0 1px 2px #bbb;
+    padding: 10px 0;
+    min-height: 90px;
+    z-index: 10;
+    position: relative;
+    & + div {
+      background: #f1f1f1;
+      z-index: 9;
+      & + div {
+        z-index: 8;
+        background: #fff;
+        margin-top: 5px;
+      }
+    }
+    p {
+      margin: 0;
+    }
+  }
+  h4 {
+    font-family: Arial,sans;
+    text-transform: uppercase;
+    font-size: 10px;
+    &.email {
+      margin: 0 10px!important;
+      border: dotted 1px #aaa;
+      padding: 20px 10px;
+      a {
+        color: #343434;
+        &:visited {
+          color: #343434;
+        }
+        b {
+          display: block;
+        }
+        &:hover {
+          color: #309ddb;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  h5 {
+    margin: 0 0 10px 10px;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 12px;
+    color: #343434;
+  }
+  .big-num {
+    font-size: 30px;
+    font-family: 'Philosopher',sans-serif;
+    line-height: 30px;
+  }
+  &.rightsidebar {
+    right: 160px;
+    top: 220px;
+     h4 {
+       margin: 0 0 10px 0;
+    }
+
+  }
+  &.leftsidebar {
+    left: 160px;
+    top: 220px;
+    h4 {
+        margin: 0 0 10px 10px;
+    }
+  }
+  ul {
+    li {
+      a {
+        color: #1d1d1d;
+        line-height: 13px;
+        text-decoration: none;
+        padding: 0 5px;
+        display: inline-block;
+        margin: 0 0 10px 5px;
+        font-style: italic;
+        font-size: 13px;
+        color: #1d1d1d;
+        &:visited {
+          color: #1d1d1d;
+        }
+        &:hover {
+          text-decoration: none;
+        }
+      }
+      &.active {
+        a {
+          color: #309ddb;
+          &:visited {
+            color: #309ddb;
+          }
+          &:hover {
+            color: #309ddb;
+          }
+        }
+      }
+    }
+  }
+}
+aside ul,aside ul li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.pull-right {
+  float: right;
+}
+.post {
+ .pull-right {
+  display: none;
+}
+}
+.pull-left {
+  float: left;
+}
+.page-head {
+ background: image-url("cheglakov/wave.png") repeat-x left bottom;
+  padding: 0 0 15px;
+  margin: 0 0 20px;
+  position: relative;
+  em {
+    &.l-left {
+      left: 0;
+      width: 100%;
+      border-bottom: solid 1px #aaa;
+    }
+  }
+  h3 {
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: normal;
+    text-align: center;
+    margin: 0;
+  }
+}
+
+
+.item {
+  .page-head {
+    background: none;
+  }
+}
+
+ul {
+  &.inline {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: inline-block;
+    }
+    &.share {
+      li {
+        padding: 0 7px;
+        vertical-align: top;
+        min-height: 40px;
+        a {
+          display: block;
+          margin: 0;
+          padding: 0;
+          position: relative;
+        }
+        .icon {
+          
+        }
+        b {
+          font-weight: normal;
+          color: #999;
+          font-size: 12px;
+        }
+      }
+    }
+    &.paging {
+      border-top: solid 1px #979797;
+      border-bottom: solid 1px #979797;
+      margin-left: 80px;
+      a {
+        padding: 0 10px;
+        color: #1f1f1f;
+        font-family: Arial,sans;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        &:hover {
+          color: #309ddb;
+        }
+      }
+      li {
+        &.active {
+          a {
+            color: #999;
+          }
+        }
+        &:last-child {
+          float: right;
+        }
+      }
+      .arr {
+        a {
+          font-size: 9px;
+          color: #424343;
+          &:visited {
+            color: #424343;
+          }
+          &:hover {
+            color: #309ddb;
+          }
+        }
+        &.disable {
+          a {
+            color: #868686!important;
+          }
+        }
+      }
+    }
+  }
+  &.social {
+    float: right;
+    li {
+      padding: 0 0 0 20px;
+      a {
+        position: relative;
+        cursor: pointer;
+      }
+    }
+  }
+  &.content-tags {
+   list-style: none outside none;
+    margin: 0 0 10px;
+    padding: 0;
+    li {
+      color: #545454;
+      display: inline;
+      list-style: none outside none;
+      &.active {
+        a {
+          color: #309ddb;
+        }
+      }
+    }
+    a {
+      color: #545454;
+    font-size: 13px;
+    font-style: italic;
+    line-height: 12px;
+    margin-right: 0.25em;
+    text-decoration: none;
+      &:hover {
+        text-decoration: none;
+        color: #309ddb;
+      }
+    }
+  }
+}
+.post {
+  img {
+    max-width: 100%!important;
+    box-shadow: 0 1px 1px #888;
+    border: solid 1px #888;
+    margin: 0 0 10px;
+  }
+}
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-image: image-url("cheglakov/icons.png");
+}
+.tw-u {
+  background-position: -380px 0;
+}
+.facebook-u {
+  background-position: -400px 0;
+}
+.vk-u {
+  background-position: -420px 0;
+}
+.lj-u {
+  background-position: -440px 0;
+}
+.tw {
+  background-position: 0 0;
+}
+.fb {
+  background-position: -20px 0;
+}
+.vk {
+  background-position: -40px 0;
+}
+a {
+  &:hover {
+    .tw {
+      background-position: 0 -20px;
+    }
+    .fb {
+      background-position: -20px -20px;
+    }
+    .vk {
+      background-position: -40px -20px;
+    }
+    .tw-m {
+      background-position: -120px -20px;
+    }
+    .fb-m {
+      background-position: -140px -20px;
+    }
+    .vk-m {
+      background-position: -160px -20px;
+    }
+    .larr-m {
+      background-position: -240px -20px;
+    }
+    .rarr-m {
+      background-position: -260px -20px;
+    }
+    .larr {
+      background-position: -280px -20px;
+    }
+    .rarr {
+      background-position: -300px -20px;
+    }
+  }
+}
+.tw-m {
+  background-position: -120px 0;
+}
+.fb-m {
+  background-position: -140px 0;
+}
+.vk-m {
+  background-position: -160px 0;
+}
+.cal {
+  background-position: -80px 0;
+}
+.rss {
+  background-position: -60px 0;
+}
+.page-down {
+  background-position: -360px 0;
+}
+.page-up {
+  background-position: -340px 0;
+}
+.comment {
+  background-position: -180px 0;
+}
+.fav {
+  background-position: -200px 0;
+}
+.pen {
+  background-position: -220px 0;
+}
+.larr-m {
+  background-position: -240px 0;
+}
+.rarr-m {
+  background-position: -260px 0;
+}
+.larr {
+  background-position: -280px 0;
+}
+.rarr {
+  background-position: -300px 0;
+}
+a.blacklink:link,a.blacklink:visited {
+  color: #434343;
+  text-decoration: none;
+  font-size: 11px;
+  font-family: Arial;
+  font-weight: bold;
+}
+.photos {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  width: 387px;
+  ul {
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+    position: absolute;
+    min-width: 1935px;
+    li {
+      display: block;
+      float: left;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  }
+}
+.big-arr {
+  &.prev {
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
+  &.next {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+.controls {
+  height: 30px;
+  margin: -10px 30px 20px 0;
+  position: relative;
+  em {
+    &.l-left {
+      left: 0;
+    }
+    &.l-right {
+      right: 0;
+    }
+  }
+  h5 {
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .ph-num {
+    position: absolute;
+    display: block;
+    text-align: center;
+    left: 0;
+    right: 0;
+    top: 20px;
+    font-size: 11px;
+  }
+}
+em.l-left,em.l-right {
+  position: absolute;
+  border-top: solid 1px #aaa;
+  bottom: 0;
+  display: block;
+  height: 2px;
+  font-size: 0;
+  line-height: 0px;
+  display: block;
+  height: 2px;
+  -moz-box-sizing: padding-box;
+  -webkit-box-sizing: padding-box;
+  box-sizing: padding-box;
+  font-size: 0;
+}
+.cursive {
+  color: #999;
+  font-style: italic;
+}
+.comments-tree {
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+    margin: 0 0 40px;
+    padding:10px 0;
+    border-top: solid 1px #ddd;
+    font-size: 12px;
+    color: #262626;
+  }
+  .user {
+    padding: 0 0 0 26px;
+    margin: 0 0 0 -26px;
+    position: relative;
+    font-family: 'Philosopher',sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    i {
+      position: absolute;
+      left: 0;
+      top: -2px;
+    }
+  }
+  .avatar {
+    float: right;
+    margin: 0 2px 0 0;
+    width: 40px;
+    img { 
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    }
+    }
+
+  .date {
+    color: #999;
+    font-style: italic;
+  }
+  .text {
+    margin: 20px 0 0;
+  }
+}
+.comment-form {
+  textarea {
+    border-radius: 0 4px 4px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,.1) inset;
+    border: solid 1px #ccc;
+    color: #666;
+    width: 100%;
+    min-height: 200px;
+    color: #545454;
+    padding: 10px;
+    background: rgba(255,255,255,.4);
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    &:-moz-placeholder {
+      color: #999;
+      font-style: italic;
+    }
+    &:focus {
+      background: rgba(255,255,255,.9);
+    }
+  }
+}
+.btn-send {
+  background:rgb(24,95,182);
+  background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzE4NWZiNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMjRjYTgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background:-moz-linear-gradient(top,rgba(24,95,182,1) 0%,rgba(2,76,168,1) 100%);
+  background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(24,95,182,1)),color-stop(100%,rgba(2,76,168,1)));
+  background:-webkit-linear-gradient(top,rgba(24,95,182,1) 0%,rgba(2,76,168,1) 100%);
+  background:-o-linear-gradient(top,rgba(24,95,182,1) 0%,rgba(2,76,168,1) 100%);
+  background:-ms-linear-gradient(top,rgba(24,95,182,1) 0%,rgba(2,76,168,1) 100%);
+  background:linear-gradient(top,rgba(24,95,182,1) 0%,rgba(2,76,168,1) 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#185fb6',endColorstr='#024ca8',GradientType=0 );
+  border: solid 1px rgba(255,255,255,.1);
+  box-shadow: 0 0px 0px rgba(0,0,0,.1);
+  -moz-box-shadow: 0 0px 0px rgba(0,0,0,.1);
+  -webkit-box-shadow: 0 0px 0px rgba(0,0,0,.1);
+  padding: 0 5px;
+  line-height: 30px;
+  height: 30px;
+  border-radius: 4px;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'Times New Roman',serif;
+  font-size: 12px;
+  letter-spacing: .2em;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+  &:hover {
+    border: solid 1px rgba(255,255,255,.99);
+    box-shadow: 0 1px 3px rgba(0,0,0,.4);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,.4);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.4);
+  }
+}
+.breadcrumbs {
+  white-space: nowrap;
+  font-size: .8em;
+  padding: 0;
+  margin: 0 0 10px 0;
+  li {
+    list-style: none;
+    display: inline;
+    padding: 0 10px 0 0;
+    text-transform: uppercase;
+    &.next-post {
+      float:right;
+      text-align:right;
+      padding: 0 0 0 10px;
+    }
+    &.prev-post {
+      float:right;
+      text-align:right;
+      padding: 0 0 0 10px;
+    }
+
+  }
+}
+.breadcrumbs li a,.breadcrumbs li a:visited {
+  text-decoration: underline;
+  color: #309DDB;
+}
+
+footer {
+  height: 200px;
+  position: relative;
+  nav {
+    bottom: 50px;
+    left: 280px;
+    padding: 5px 0 0;
+    position: absolute;
+    right: 180px;
+    ul {
+      li {
+        display: inline-block;
+        vertical-align: middle;
+        a {
+          &:hover {
+            color: #309ddb;
+          }
+        }
+      }
+      &.page-move {
+        float: left;
+        .page-up {
+          margin: -4px 3px 0 0;
+        }
+      }
+      &.social {
+        clear: right;
+        float: right;
+        line-height: 24px;
+      }
+      &.favorites {
+        margin-top: 100px;
+        float: right;
+      }
+    }
+  }
+  .info {
+    position: absolute;
+    top: 100px;
+    left: 280px;
+    a {
+      &:hover {
+        color: #309ddb;
+      }
+      b {
+        font-family: 'Philosopher',sans-serif;
+        color: #0C1620;
+        font-size: 13px;
+        line-height: 14px;
+      }
+      i {
+        color: #309ddb!important;
+        font-style: normal;
+      }
+    }
+  }
+  p {
+    margin: 0;
+  }
+  .copy {
+    width: 130px;
+    float: left;
+    margin: 0 0 0 30px;
+  }
+  .title {
+    h2 {
+      font-size: 14px;
+      text-transform: uppercase;
+      font-family: 'Philosopher',sans-serif;
+      font-weight: normal;
+      line-height: 20px;
+      a {
+        color: #0C1620;
+        &:visited {
+          color: #0C1620;
+        }
+        &:hover {
+          color: #309ddb;
+        }
+      }
+    }
+  }
+}
+footer nav ul li a,footer nav ul li a:visited {
+  color: #0C1620;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: Arial,sans;
+  line-height: 20px;
+}
+footer .info a,footer .info a:visited {
+  color: #0C1620;
+}
+.ajax-pagination {
+  background: none repeat scroll 0 0 rgba(0,0,0,0.05);
+  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1) inset;
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.1) inset;
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1) inset;
+  height: 30px;
+  margin: 30px 0 30px 90px;
+  position: relative;
+  a {
+    bottom: 0;
+    cursor: pointer;
+    display: block;
+    left: 0;
+    line-height: 30px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    z-index: 100;
+    color: #424343;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: Arial,sans;
+    &:hover {
+      color: #309ddb;
+    }
+  }
+  .previous_page {
+    display: none;
+  }
+  span {
+    display: none;
+  }
+  .loader {
+    display: none;
+    left: 50%;
+    margin-left: -16px;
+    margin-top: -16px;
+    position: absolute;
+    top: 50%;
+    margin-top: -7px;
+  }
+  &.loading {
+    .loader {
+      display: block;
+    }
+    .next_page {
+      display: none;
+    }
+  }
+}
+.inner {
+  article {
+    &.post {
+    time {
+    width: 70px;
+    }
+    h2 {
+    min-height: 40px;
+    }
+      .comments {
+        background: image-url("cheglakov/wave-th.png") left top repeat-x;
+        margin: 20px 0;
+        padding: 40px 0;
+      }
+    }
+  }
+}
+.item {
+      .comment-num {
+        border-top: 1px solid #AAAAAA;
+       clear: left;
+       float: left;
+       margin: 5px 0 0 -80px;
+       padding: 15px 0;
+       position: relative;
+       text-align: center;
+       width: 70px;
+        em {
+          margin: 0 0 5px;
+          color: #999;
+          font-size: .9em;
+          display: block;
+          line-height: 1em;
+          font-weight: normal;
+          }
+        b {
+          font-family: 'Philosopher',sans-serif;
+          font-size: 30px;
+          line-height: 1em;
+          text-align: center;
+          font-weight: normal;
+          vertical-align: middle;
+          display: inline-block;
+        }
+        i {
+          position: absolute;
+          right: 3px;
+          top:50px;
+        }
+      }
+
+}
+.calendar {
+  display: inline-block;
+  width: 30px;
+  position: relative;
+  float: left;
+  * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  nav {
+    background: none repeat scroll 0 0 #555555;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    color: #FFFFFF;
+    font-family: helvetica,sans-serif;
+    font-size: 11px;
+    left: 0;
+    padding: 5px;
+    position: absolute;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+    top: 20px;
+    width: 305px;
+    z-index: 100;
+    & > div {
+      position: relative;
+      padding: 2px 20px;
+      & > div {
+        display: none;
+        &.active {
+          display: block;
+        }
+        & > a {
+          color: #FFFFFF;
+          background: rgba(255, 255, 255, 0.15);
+          border-radius: 2px 2px 2px 2px;
+          box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2) inset, 0 0 3px #444444;
+          -webkit-box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2) inset, 0 0 3px #444444;
+          -moz-box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2) inset, 0 0 3px #444444;
+          float: left;
+          height: 40px;
+          margin: 2px;
+          width: 80px;
+          padding: 5px;
+          position: relative;
+          display: block;
+          overflow: hidden;
+          &:hover {
+            background: rgba(255, 255, 255, 0.25);
+            cursor: hover;
+          }
+          &.active {
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5) inset, 0 0 3px #444444;
+            -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5) inset, 0 0 3px #444444;
+            -moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5) inset, 0 0 3px #444444;
+            background: rgba(0, 0, 0, 0.15);
+          }
+          span {
+            display: block;
+            float: left;
+            em {
+              color: #999;
+              display: block;
+              font-size: 9px;
+              font-style: normal;
+              margin: 0 0 0 3px;
+              text-transform: uppercase;
+            }
+          }
+          b {
+            color: #AAAAAA;
+            display: block;
+            float: right;
+            font-family: 'Philosopher',sans-serif;
+            font-size: 20px;
+            font-style: italic;
+            line-height: 1em;
+            margin: 10px 4px 4px 0;
+          }
+        }
+      }
+    }
+  }
+  .arr {
+    display: inline-block;
+    vertical-align: middle;
+    background-image: image-url('cheglakov/arrs.png');
+    background-repeat: no-repeat;
+    height: 38px;
+    width: 16px;
+    cursor: pointer;
+    position: absolute;
+    &.prev {
+      background-position: 0 0;
+      left: 0;
+      top: 60px;
+      &:hover {
+        background-position: 0 -38px;
+      }
+    }
+    &.next {
+      background-position: -16px 0;
+      right: 0;
+      top: 60px;
+      &:hover {
+        background-position: -16px -38px;
+      }
+    }
+    &.disabled {
+      visibility: hidden;
+    }
+  }
+}
+.about {
+  article{
+    &.post {
+    padding: 0 0 40px 0px;
+}
+}
+}
+.index {
+  article{
+    &.post {
+        &.first {
+      margin: 0 0 40px;
+      padding: 0;
+      h2 {
+        text-align: center;
+      }
+      time { display: none;}
+      ul.content-tags { 
+      display: none;
+      }
+      .comments {
+        height: 40px;
+        .comment-num {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -10px;
+          text-align: center;
+          .nowrap {
+            display: block;
+          }
+        }
+        em {
+          border-bottom: solid 1px #aaa;
+          bottom: 0;
+          &.l-left {
+            left: 0;
+            right: 50%;
+            width: auto;
+            margin: 0 15px 0 0; 
+          }
+          &.l-right {
+            display: block;
+          }
+        }
+      }
+    }
+
+
+    }
+  }
+}
+.t-tip {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.8);
+    box-shadow: 0 2px 9px #777777;
+    color: #FFFFFF;
+    display: none;
+    font-size: 11px;
+    text-transform: none;
+    font-weight: normal;
+    line-height: 1.15em;
+    margin: 10px 0 0 -10px;
+    padding: 2px 3px;
+    white-space: normal;
+    width: 70px;
+    z-index: 200;
+    font-family: Arial;
+    font-style:normal;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+a:hover .t-tip {
+    display: inline;
+    position: absolute;
+    top:8px;
+    left: 18px;
+    
+}
+ul.inline.feeds { text-align: left;}
+ul.inline.feeds .icon { margin: -4px 3px 0 0;}
+ul.inline.feeds a { font-style: normal; font-family: Arial, sans; font-size: 11px; color: #545454}
+
+.vjs-default-skin .vjs-big-play-button  { 
+  box-shadow: 2px 2px 4px #000000!important;
+  -moz-box-shadow: 2px 2px 4px #000000!important;
+  -webkit-box-shadow: 2px 2px 4px #000000!important;
+  border-radius: 0!important;
+  -moz-border-radius: 0!important;
+  -webkit-border-radius: 0!important;
+  height: 6em!important;
+  border: 0.6em solid #FFFFFF!important;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.fotorama_shadows .fotorama__img { 
+    border: none;
+    box-shadow: none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+}
+.fotorama__arr {text-shadow: rgba(0,0,0, .5) 0 0 1px,  rgba(0,0,0, .5) 0 0 2px!important;  }
+.fotorama__wrap_mouseover .fotorama__arr:hover, .fotorama__wrap_mouseover .fotorama__arr_hover { text-shadow: rgba(0,0,0, .5) 0 0 1px,  rgba(0,0,0, .5) 0 0 2px!important; }
+
+.fotorama__thumbs_previews { background: none;}
+.fotorama__wrap {
+  background: none repeat scroll 0 0 rgba(0,0,0,0.05);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1) inset;
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.1) inset;
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1) inset;
+
+}
+
+/* ==|== media queries ======================================================
+   EXAMPLE Media Query for Responsive Design.
+   This example overrides the primary ('mobile first') styles
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+
+
+/* ==|== non-semantic helper classes ========================================
+   Please define your styles before this section.
+   ========================================================================== */
+
+/* For image replacement */
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
+.ir br { display: none; }
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.hidden { display: none !important; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* Contain floats: h5bp.com/q */
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+
+
+/* ==|== print styles =======================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* h5bp.com/t */
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}

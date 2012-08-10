@@ -8,85 +8,107 @@
 %head
   %meta{ charset: "utf-8" }
   %meta{ :"http-equiv" => "X-UA-Compatible", content: "IE=edge,chrome=1" }
-  %meta{ name: "description", content: "" }
-  %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0"}
-  = favicon_link_tag '/ico/shard/favicon.ico', rel: "shortcut icon"
+  %meta{ name: "description", content: t("front.cheglakov.description") }
+  %meta{ name: "viewport", content: "width=device-width" }
+  %link{ rel: "icon", href: "/favicon.ico", type: "image/x-icon"}
+  %link{ rel: "shortcut icon", href: "/favicon.ico", type: "image/x-icon"}
 
-  %title= t('front.shard_title')
-  = stylesheet_link_tag "shard"
+  %title= t('front.cheglakov.aleksandr_cheglakov')
+  = stylesheet_link_tag "cheglakov"
+  %link{ href: 'http://fonts.googleapis.com/css?family=Philosopher&subset=latin,cyrillic', rel: 'stylesheet', type: 'text/css'}
   %link{ href: "http://vjs.zencdn.net/c/video-js.css", rel: "stylesheet" }
   :erb
     <!--[if IE 8]>  <%= stylesheet_link_tag("ie/ie.css") %> <![endif]-->
-  = javascript_include_tag "shard"
+  = javascript_include_tag "cheglakov"
   %script{ src: "http://vjs.zencdn.net/c/video.js" }
+  %script{ src: "http://vk.com/js/api/share.js?11" }
   = yield :head
 %body
-  = render partial: 'front/shared/outdated_browser_body'
-  .bigimg
-    .rel
-      = image_tag "matsuev/bg#{rand(4).succ}.jpg"
-      .cover
-  .watermark{ class: lang_code }
-  %div{ role: "main", class: index_page? ? "page index" : "page inner #{@static_page_class}" }
+  %div{ role: "main", class: "page #{@page_class}" }
     %header
       %nav
+        %ul.social
+          %li
+            %a{ href: "http://vk.com/drcheglakov" }
+              %i.icon.vk
+              %span.t-tip= t('front.cheglakov.network.profile.vk')
+          %li
+            %a{ href: "https://twitter.com/#!/DrCheglakov" }
+              %i.icon.tw
+              %span.t-tip= t('front.cheglakov.network.profile.tw')
+          %li
+            %a{ href: "http://www.facebook.com/drcheglakov" }
+              %i.icon.fb
+              %span.t-tip= t('front.cheglakov.network.profile.fb')
         %ul.menu
-          = render 'front/shared/navigation', { part: :top }
-        %ul.language
-          - if @current_shard_language
-            - @current_shard.shard_languages.each do |lang|
-              %li{ class: @current_shard_language.language.code == lang.language.code ? "active" : nil }
-                %a{ href: this_url_for_language(lang) } #{lang.language.name[0..2]}
-          %li.bookmark
-            %a.add_to_bookmarks{ href: "#" }
-              %b
-                %em= t('front.matsuev.bookmarks')
-      %h1{ class: lang_code }
-        = link_to t('front.matsuev.denis_matsuev'), root_path
-        .light
-    -# - if index_page?
-    -#   %section.player#intro
-    -#     - if @current_shard_language
-    -#       = render 'front/matsuev/shared/videos_on_index'
-    %section.social
-      %div
-        %h4= t('front.matsuev.social.title')
-        %ul
-          = render 'front/shared/social_accounts'
-    - if index_page?
-      %section.photo
-        = # render "front/matsuev/shared/photos_widget"
-    %section{ class: @unsticked ? "center-section unsticked" : "center-section"}
-      %ul.breadcrumbs
-        = render_breadcrumbs separator: "&nbsp;/&nbsp;", tag: "li"
+          = render "cheglakov/shared/navigation", { part: :top }
+      %h1
+        = link_to t('front.cheglakov.aleksandr_cheglakov'), root_path
+    %section.center-section
       = yield
-    %aside
-      - unless index_page? || @current_shard_language.nil?
-        = # render "front/matsuev/shared/left_nav"
-      %section.next-event
-        = # render "front/matsuev/shared/event_widget"
-      - unless events_page?
-        %section.calendar
-          = # render "front/matsuev/shared/calend_widget", count: 4
+    %aside.leftsidebar
+      %h4= t('front.cheglakov.tag.tags')
+      - unless @misc_tags.empty?
+        %ul
+          - @misc_tags.each do |tag|
+            %li{ class: ("active" if tag == @tag) }
+              = link_to tag.name, blog_tagged_by_path(tag)
+    %aside.rightsidebar
+      = render "cheglakov/shared/share_buttons"
+      %div
+        %h4= t('front.cheglakov.read.us')
+        %ul.inline.feeds
+          %li
+            %a{ href: "http://drcheglakov.livejournal.com/" }
+              %i.icon.lj-u
+              = t('front.cheglakov.read.lj')
+          %li
+            %a{ href: "http://www.facebook.com/drcheglakov" }
+              %i.icon.facebook-u
+              = t('front.cheglakov.read.fb')
+          %li
+            %a{ href: "https://twitter.com/#!/DrCheglakov" }
+              %i.icon.tw-u
+              = t('front.cheglakov.read.tw')
     %footer
       .copy
         .title
-          = t('front.matsuev.denis_matsuev')
-          %br
-        .right
-          &copy;
-          = t('front.matsuev.copy') + " 2011."
+          %h2
+            = link_to "Личный блог Александра Чеглакова ©", root_path
+          %p
+            %em Все права защищены.
+          %p
+            %em 2012.
       %nav
-        %ul.language
-          %li.bookmark
-            %a.add_to_bookmarks{ href: "" }
-              %b
-                %em= t('front.matsuev.bookmarks')
-        .search
-          = form_tag(search_path) do
-            = hidden_field_tag :search_input_prompt, t('front.matsuev.search.prompt'), {:class => "search-input-prompt"}
-            = text_field_tag :search, t('front.matsuev.search.prompt'), {:class => "search-input"}
-        %ul.menu
-          = render 'front/shared/navigation', { part: :bottom }
-:erb
-  </html>
+        %ul.page-move
+          %li
+            %a{ href: "#" }
+              %i.icon.page-up
+              наверх
+        %ul.favorites
+          %li
+            %a.add_to_bookmarks{ href: "#" }
+              в избранное
+              %i.icon.fav
+        %ul.social
+          %li
+            %a{ href: "http://vk.com/drcheglakov" }
+              %i.icon.vk
+              %span.t-tip= t('front.cheglakov.network.profile.vk')
+          %li
+            %a{ href: "https://twitter.com/#!/DrCheglakov" }
+              %i.icon.tw
+              %span.t-tip= t('front.cheglakov.network.profile.tw')
+          %li
+            %a{ href: "http://www.facebook.com/drcheglakov" }
+              %i.icon.fb
+              %span.t-tip= t('front.cheglakov.network.profile.fb')
+      .info
+        %p
+          %em Контактная информация:
+        %p
+          %a{ href: "skype:+74959531111?call" }
+            %b +7 (495) 953–11–11
+        %p
+          %a{ href: "mailto:alexander@cheglakov.me" }
+            %i alexander@cheglakov.me

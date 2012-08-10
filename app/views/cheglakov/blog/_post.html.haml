@@ -1,32 +1,22 @@
-- content = post.contents.for_shard_language(@current_shard_language).first
-- if post.sticky?
-  - if content.videos.empty?
-    - klass = "post first-#{post.stream_name} textpost"
-  - else
-    - klass = "post first-#{post.stream_name} videopost"
-- else
-  - klass = "post"
-%article{ class: klass }
+%article{ class: ((index.zero? && first && index_page? && params[:month].nil?) ? "post first" : "post") }
   %time
+    = I18n.l Time.mktime(2000, post.created_at.month.to_s), format: "%B", locale: :ru
     %em= post.created_at.day
-    = t("months.m#{post.created_at.month.to_s}")
-  %h2
-    = link_to post.content(@current_shard_language).title, blog_path(post)
-  - if content.photos.empty? && content.videos.empty?
-    %p= raw content.cut
-    = link_to t("front.matsuev.blog.read_more") + "...", blog_path(post) if content.has_cut?
-  - elsif content.photos.empty?
-    - if content.videos.first.youtube?
-      %iframe.video{ src: "http://www.youtube.com/embed/#{content.videos.first.youtube_id}", frameborder: "0", allowfullscreen: true }
-    - else
-      %video{ id: "video_#{content.videos.first.id}", class: "video-js vjs-default-skin", controls: true, preload: "auto", :"data-setup" => '{}' }
-        %source{ src: content.videos.first.url(false, "mp4"), type: 'video/mp4' }
-        %source{ src: content.videos.first.url(false, "webm"), type: 'video/webm' }
-    %br
-    = link_to t("front.matsuev.blog.read_more") + "...", blog_path(post), class: "post-more-link"
-  - else
-    %a.photo{ href: blog_path(post), style: "font-size: 0px" }
-      = image_tag content.photos.first.link("400")
-    %br
-    = link_to t("front.matsuev.blog.read_more") + " (" + t("front.matsuev.blog.text") + " + #{content.photos.count} " + t("front.matsuev.blog.photos") + ")...", blog_path(post), class: "post-more-link"
-  = render partial: 'front/matsuev/shared/tag_cloud', locals: { tags: content.tags }
+  %h2= link_to post.content(@current_shard_language).title, blog_path(post)
+  - if post.content(@current_shard_language).photos.empty?
+    %p= raw post.content(@current_shard_language).cut
+  - else post.content(@current_shard_language).photos.empty?
+    .fotoramajs{ "data-width" => 640, "data-height" => 480 }
+      - post.content(@current_shard_language).photos.each do |photo|
+        = image_tag photo.url
+  = link_to t("front.cheglakov.blog.read_more") + "...", blog_path(post) if post.content(@current_shard_language).has_cut?
+  = render partial: "cheglakov/shared/tag_cloud", locals: { tags: post.content(@current_shard_language).tags }
+  .comments
+    %em.l-left
+    %em.l-right
+    %p.comment-num
+      %span.nowrap
+        %a{ href: blog_path(post, anchor: 'comments') }
+          %b= post.content(@current_shard_language).comments_count
+          = Russian.p(post.content(@current_shard_language).comments_count, "комментарий", "комментария", "комментариев")
+      %i.icon.comment

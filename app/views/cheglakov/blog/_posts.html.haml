@@ -1,5 +1,5 @@
-- (@posts || posts).each do |post|
-  = render 'post', post: post
+- (@personal_posts || posts).each_with_index do |post, index|
+  = render "cheglakov/blog/post", post: post, index: index, first: posts ? true : false
 .ajax-pagination
-  = image_tag "matsuev/ajax-loader.gif", class: "loader"
-  = will_paginate((@posts || posts), page_links: false, container: false, previous_label: "", next_label: t('front.matsuev.blog.more'), params: {stream: @stream || stream}, :renderer => WillPaginate::ActionView::LinkRenderer) unless (@posts || posts).empty?
+  = image_tag "cheglakov/ajax-loader.gif", class: "loader"
+  = will_paginate((@posts || posts), page_links: false, container: false, previous_label: "", next_label: t('front.cheglakov.blog.more'), :renderer => WillPaginate::ActionView::LinkRenderer) unless (@posts || posts).empty?

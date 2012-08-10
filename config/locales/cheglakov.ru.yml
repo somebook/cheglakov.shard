@@ -1,4 +1,32 @@
 ru:
   front:
     cheglakov:
-      foo: bar
+      aleksandr_cheglakov: Александр Чеглаков
+      description: Личный блог главврача стоматологической клиники «Александрия»
+      network:
+        profile:
+          vk: Профиль в Vkontakte
+          fb: Профиль в Facebook
+          tw: Профиль в Twitter
+      share:
+        share: "Поделиться:"
+        vk: Поделиться в Vkontakte
+        fb: Поделиться в Facebook
+        tw: Поделиться в Twitter
+      shares: "уже поделились:"
+      return: Вернуться в блог
+      calendar: Календарь
+      read:
+        us: Читайте нас
+        lj: в Livejournal
+        fb: в Facebook
+        tw: в Twitter
+      blog:
+        blog: Блог
+        my_blog: Мой Блог
+        read_more: Читать дальше
+        more: Показать еще
+        next: Следующий
+        prev: Предыдущий
+      tag:
+        tags: Метки
