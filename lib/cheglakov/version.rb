@@ -1,0 +1,3 @@
+module Cheglakov
+  VERSION = "0.0.1"
+end
