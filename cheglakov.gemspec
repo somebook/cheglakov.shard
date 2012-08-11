@@ -9,13 +9,9 @@ Gem::Specification.new do |s|
   s.version     = Cheglakov::VERSION
   s.authors     = ["Gregory Eremin"]
   s.email       = ["magnolia_fan@me.com"]
-  s.homepage    = "https://github.com/itfog/cheglakov.somebook"
+  s.homepage    = "https://github.com/somebook/cheglakov.shard"
   s.summary     = "Somebook Cheglakov shard"
   s.description = "Rails mountable engine that provides embedded shard functionality"
 
-  s.files = Dir["{app,config,lib}/**/*"] + ["Rakefile", "README.rdoc"]
-  s.test_files = Dir["test/**/*"]
-
-  # s.add_dependency "rails", "3.2.8"
-  # s.add_dependency "jquery-rails"
+  s.files = Dir["{app,config,lib}/**/*"] + ["README.rdoc"]
 end
