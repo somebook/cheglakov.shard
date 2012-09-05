@@ -1,5 +1,5 @@
 
-.commentatr-comments-list li .commentatr-comment-author { 
+.commentatr-comments-list li .commentatr-comment-author {
  font-family: 'Philosopher',sans-serif;
     font-size: 13px;
     margin: 0 0 0 -26px;
@@ -47,7 +47,7 @@ box-shadow:0 1px 3px rgba(0,0,0,.4);
   font-style: italic;
   font-size: 12px;
 }
-.commentatr-comments-list li .commentatr-comment-body { 
+.commentatr-comments-list li .commentatr-comment-body {
  color: #262626;
  font-size: 12px;
  list-style: none outside none;
@@ -83,6 +83,11 @@ box-sizing:border-box;
 -moz-box-sizing:border-box;
 -webkit-box-sizing:border-box;
 
+}
+
+.commentatr-login-info {
+  height: 18px;
+  padding: 3px 0;
 }
 
 #commentatr-form { margin: 0 0 60px;}
