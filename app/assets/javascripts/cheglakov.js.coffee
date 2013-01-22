@@ -6,7 +6,7 @@
 //= require fotorama
 
 jQuery ->
-  $(".next_page").live 'click', (e) ->
+  $(".next_page").on 'click', (e) ->
     $(this).parent().addClass("loading")
     el = $(this)
     if $(this).attr("href").search("/blog/more") == 0
@@ -41,14 +41,14 @@ jQuery ->
       nav: 'dots'
     })
   
-  $(".pull-left a:has(.icon.page-down)").live 'click', (e) ->
+  $(".pull-left a:has(.icon.page-down)").on 'click', (e) ->
     $('html, body').animate(
       scrollTop: $("body .page").height()
       800
     )
     false
     
-  $(".page-move a:has(.icon.page-up)").live 'click', (e) ->
+  $(".page-move a:has(.icon.page-up)").on 'click', (e) ->
     $('html, body').animate(
       scrollTop: 0
       800
