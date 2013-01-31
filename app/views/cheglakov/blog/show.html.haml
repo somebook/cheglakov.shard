@@ -27,5 +27,5 @@
     %a{ href: "" }
   = render partial: "cheglakov/shared/tag_cloud", locals: { tags: @post.content(@current_shard_language).tags }
   = render "shared/share_buttons"
-  = render partial: "shared/commentatr_comments", locals: { entry_id: @post.content(@current_shard_language).commentatr_hash, lang: @current_shard_language.language.code }
-  = stylesheet_link_tag "cheglakov/comments"
+  -# = render partial: "shared/commentatr_comments", locals: { entry_id: @post.content(@current_shard_language).commentatr_hash, lang: @current_shard_language.language.code }
+  -# = stylesheet_link_tag "cheglakov/comments"
